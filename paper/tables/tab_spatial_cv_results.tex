@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\caption{Spatially Blocked Cross-Validation Benchmark and Regional Holdout Breakdown ($N = \numStations{}$ US EPA AQS Stations Across \numCounties{} Counties in \numStates{} States).}
+\label{tab:spatial_benchmark}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+\multicolumn{5}{l}{\textbf{Panel A: Overall Benchmark Across All Held-Out Stations}} \\
+\textbf{\shortstack{Spatial Mapping\\Method}} & \textbf{\shortstack{MAE\\($\mu\mathrm{g}/\mathrm{m}^3$)}} & \textbf{RMSE} & \textbf{\shortstack{Pearson\\$r$}} & \textbf{\shortstack{80\% Nominal\\Coverage}} \\
+\midrule
+Network Mean Baseline & 1.92 & 2.42 & 0.000 & -- \\
+\textbf{Inverse Distance Weighting (IDW)} & \textbf{1.70} & \textbf{2.19} & \textbf{0.329} & -- \\
+Spatial Ridge Regression & 1.84 & 2.36 & 0.231 & -- \\
+Quantile HistGradientBoosting & 1.93 & 2.57 & 0.234 & \textbf{56.0\%} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Panel B: Regional Holdout Breakdown by Spatial Block (K=8 Clusters)}} \\
+\textbf{\shortstack{Block ID\\(Representative States)}} & \textbf{\shortstack{Station\\Count}} & \textbf{\shortstack{Mean $\mathrm{PM}_{2.5}$\\($\mu\mathrm{g}/\mathrm{m}^3$)}} & \textbf{\shortstack{IDW MAE\\($\mu\mathrm{g}/\mathrm{m}^3$)}} & \textbf{\shortstack{HistGBM MAE\\($\mu\mathrm{g}/\mathrm{m}^3$)}} \\
+\midrule
+Block 0 (AR, KS, LA, MS) & 114 & 9.20 & 1.14 & 1.57 \\
+Block 1 (AZ, CA, ID, MT) & 191 & 7.58 & 2.18 & 2.76 \\
+Block 2 (DE, DC, ME, MD) & 208 & 8.66 & 1.59 & 1.84 \\
+Block 3 (AL, FL, GA, KY) & 133 & 8.76 & 1.14 & 1.10 \\
+Block 4 (HI) & 14 & 3.19 & 4.91 & 6.67 \\
+Block 5 (AZ, CO, ID, KS) & 123 & 6.42 & 2.17 & 1.72 \\
+Block 6 (AK) & 6 & 6.97 & 2.40 & 2.56 \\
+Block 7 (IL, IN, IA, KY) & 207 & 9.93 & 1.53 & 1.79 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

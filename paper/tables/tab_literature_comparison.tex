@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\caption{Comparison of Environmental Inequality and Spatial Air Quality Mapping Methodologies}
+\label{tab:literature_comparison}
+\centering
+\footnotesize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{p{3.5cm}p{2.8cm}p{2.8cm}p{2.8cm}p{4.2cm}}
+\toprule
+\textbf{Methodology / Paradigm} & \textbf{Target Observational Data} & \textbf{Spatial Validation Scheme} & \textbf{Uncertainty Estimation} & \textbf{Primary Operational Characteristics} \\
+\midrule
+Econometric Surface Mapping~\cite{colmer2020,jbaily2022} & Satellite-derived PM$_{2.5}$ & Census-tract aggregation & Clustered standard errors & Large spatial coverage; relies on model-derived aerosol surfaces \\
+Epidemiological Reanalysis Surfaces~\cite{di2017} & CTM / AOD reanalysis grids & Regional grid comparison & Ensemble spread & Continuous fields; coarse resolution smooths localized monitor-scale gradients \\
+Classical Geostatistics (IDW/Kriging)~\cite{shepard1968,cressie2011} & Physical in-situ network & Distance-based interpolation & Kriging variance / empirical & Strong local distance-decay prior; lacks non-linear socioeconomic feature fusion \\
+Tabular Gradient Boosting~\cite{meyer2018,roberts2017} & Station coordinates + census & Random cross-validation & Often unquantified & Captures feature interactions; risks spatial discontinuity across unmonitored clusters \\
+\midrule
+\textbf{Spatial Blocked Benchmark (This Study)} & \textbf{EPA AQS Ground Monitors} & \textbf{8-Cluster Spatially Blocked CV} & \textbf{Quantile Prediction Bounds} & \textbf{Direct in-situ grounding; evaluates domain shift to unmonitored regions} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
